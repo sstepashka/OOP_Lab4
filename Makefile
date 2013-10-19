@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=
 LDFLAGS=-Wall
-SOURCES=sources/Box.c sources/Composite.c sources/Cyrcle.c sources/Rect.c sources/Shape.c sources/main.c
+SOURCES=Box.c Composite.c Cyrcle.c Rect.c Shape.c main.c
 OBJECTS=$(SOURCES:.c=.o)
 EXECUTABLE=lab_4
 
