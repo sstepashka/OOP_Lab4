@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=
 LDFLAGS=-Wall
-SOURCES=Box.c Composite.c Cyrcle.c Rect.c Shape.c main.c
+SOURCES=sources/Box.c sources/Composite.c sources/Cyrcle.c sources/Rect.c sources/Shape.c sources/main.c
 OBJECTS=$(SOURCES:.c=.o)
 EXECUTABLE=lab_4
 
@@ -11,4 +11,4 @@ $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 
 clean:
-	rm -rf *.o hello
+	rm -rf *.o $(EXECUTABLE)
