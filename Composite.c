@@ -3,6 +3,18 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+void moveComposite(Composite *self, int x, int y) {
+    self->setX(self, self->getX(self) + x);
+    self->setY(self, self->getY(self) + y);
+
+    for (int i = 0; i < 255; i++) {
+        ArrayElement *element = self->array[i];
+        if (element->shape) {
+            element->shape->move(element->shape, x, y);
+        }
+    }
+}
+
 void printComposite(Composite *self) {
     printf("Begin Composite X = %i, Y = %i;\n", self->getX(self), self->getY(self));
 
@@ -54,6 +66,7 @@ Composite *newComposite(int x, int y) {
     composite->print = &printComposite;
     composite->addShape = &addShape;
     composite->removeShape = &removeShape;
+    composite->move = &moveComposite;
 
     return composite;
 }

@@ -58,6 +58,16 @@ int main (int argc, char *argv[])
     composite->print(composite);
     printf("\n");
 
+    printf("move composite (8, 4) by (10, 10)\n");
+    composite->move(composite, 10, 10);
+    composite->print(composite);
+    printf("\n");
+
+    printf("move previous composite (8, 4) by (-10, -10)\n");
+    composite->move(composite, -10, -10);
+    composite->print(composite);
+    printf("\n");
+
     free(cyrcle);
     free(cyrcle1);
     free(cyrcle2);
